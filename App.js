@@ -1,34 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "Hello World! using React"
-// );
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// const parent = React.createElement(
-//   "div",
-//   { id: "parent" },
-//   React.createElement(
-//     "div",
-//     { id: "child" },
-//     React.createElement("h1", {}, "I ' m an H1 Tag")
-//   )
-// );
-
-// root.render(parent);
-// console.log(parent);
-
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I ' m an H1 Tag"),
-    React.createElement("h2", {}, "I ' m an H2 Tag"),
-  ])
+const title = (
+  <h1 className="container" tabIndex="5">
+    AMIT Nandan
+  </h1>
 );
 
-root.render(parent);
-console.log(parent);
+const number = 1000;
+
+const Heading = () => (
+  <div id="container">
+    {title}
+    <h1>{number + 50}</h1>
+    <h1 className="heading">Amit Nandan functional Component</h1>;
+  </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Heading />);

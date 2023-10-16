@@ -1,0 +1,42 @@
+const heading = React.createElement("h1", { id: "heading" }, "Amit");
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//JSX
+const jsxheading = <h1 id="heading">Amit Nandan</h1>;
+
+console.log(jsxheading);
+console.log(heading);
+
+root.render(jsxheading);
+
+
+*Element and Component are different 
+
+
+-------------------------------------------------
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const title = (
+  <h1 className="container" tabIndex="5">
+    AMIT Nandan
+  </h1>
+);
+
+//const number = 1000;
+const data = api.getData(); //assume this is malicious
+
+//cross site scripting ( get hold of some scripts getcookies etc.)
+//JSX takes care of this injection attack
+//JSX will escape this malicous data
+const Heading = () => (
+  <div id="container">
+    {title}
+    {data}
+    <h1>{number + 50}</h1>
+    <h1 className="heading">Amit Nandan functional Component</h1>;
+  </div>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Heading />);
