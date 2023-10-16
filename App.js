@@ -1,8 +1,11 @@
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Hello World! using React"
-);
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+// const heading = React.createElement(
+//   "h1",
+//   { id: "heading" },
+//   "Hello World! using React"
+// );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // const parent = React.createElement(

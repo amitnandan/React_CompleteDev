@@ -1,0 +1,33 @@
+{
+  "name": "complete_react",
+  "version": "1.0.0",
+  "description": "This is React by Amit Nandan",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitnandan/React_CompleteDev.git"
+  },
+  "keywords": [
+    "react",
+    "amit"
+  ],
+  "author": "Amit Nandan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitnandan/React_CompleteDev/issues"
+  },
+  "homepage": "https://github.com/amitnandan/React_CompleteDev#readme",
+  "dependencies": {
+    "parcel": "^2.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "browserlist": [
+    "last 2  versions"
+  ]
+}
