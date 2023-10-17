@@ -1,0 +1,55 @@
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://assets.materialup.com/uploads/48bcfff3-16f2-48fb-b022-1216add0c1ca/preview.jpg"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>HOME</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+const ResturantCard = (props) => {
+  return (
+    <div
+      className="res-card"
+      style={{
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      <img
+        className="res-logo"
+        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+        alt="res-logo"
+      />
+      <h3> {props.resName}</h3>
+      <h4> {props.cusine}</h4>
+      <h4>4.5 starss</h4>
+      <h4>38min</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <ResturantCard
+          resName="Camparan Foods"
+          cusine=" North Indian , Biryani , Asian , Italian"
+        />
+        <ResturantCard resName="KFC" cusine="Burger , Fast Foods" />
+      </div>
+    </div>
+  );
+};
