@@ -1,0 +1,5 @@
+whenever there is State varible update  , it re-render the component
+
+
+_____________________________________---------------------_____________________________________
+

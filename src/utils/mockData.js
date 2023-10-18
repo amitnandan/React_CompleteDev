@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 const resList = [
   {
     info: {
@@ -1335,72 +1332,4 @@ const resList = [
   },
 ];
 
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://assets.materialup.com/uploads/48bcfff3-16f2-48fb-b022-1216add0c1ca/preview.jpg"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>HOME</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const ResturantCard = (props) => {
-  const { resData } = props;
-  const { name, cuisines, avgRating, sla, costForTwo } = resData?.info; //optional chaining
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "#f0f0f0",
-      }}
-    >
-      <img
-        className="res-logo"
-        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
-        alt="res-logo"
-      />
-      <h3> {name}</h3>
-      <h4> {cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{sla.deliveryTime} minutes</h4>
-      <h4>Rs.{costForTwo} for two</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => (
-          <ResturantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-      //footer
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
