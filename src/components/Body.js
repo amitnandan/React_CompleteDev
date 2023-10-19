@@ -44,16 +44,17 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/mapi/homepage/getCards?lat=25.5808583&lng=85.1172782"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5561306&lng=73.7769077&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     setListOfResturants(
-      json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredResturants(
-      json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
