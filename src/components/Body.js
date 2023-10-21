@@ -1,64 +1,21 @@
 import ResturantCard from "./ResturantCard";
-import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { Resturants_API } from "../utils/constants";
+import ResturantList from "../utils/useResturantList";
+import useResturantList from "../utils/useResturantList";
 
 const Body = () => {
-  // let listofR = [
-  //   {
-  //     info: {
-  //       id: "4087",
-  //       name: "Aroma's Hyderabad House",
-  //       cloudinaryImageId: "syu9rjepkqsw5agjbbd9",
-  //       locality: "Erandwane",
-  //       costForTwo: "₹500 for two",
-  //       cuisines: ["Biryani", "Mughlai", "North Indian", "Chinese"],
-  //       avgRating: 4.2,
-  //       sla: {
-  //         deliveryTime: 21,
-  //       },
-  //     },
-  //   },
-  //   {
-  //     info: {
-  //       id: "4088",
-  //       name: "Aroma's  House",
-  //       cloudinaryImageId: "syu9rjepkqsw5agjbbd9",
-  //       locality: "Erand",
-  //       costForTwo: "₹500 for two",
-  //       cuisines: ["Mughlai", "North Indian", "Chinese"],
-  //       avgRating: 3.5,
-  //       sla: {
-  //         deliveryTime: 25,
-  //       },
-  //     },
-  //   },
-  // ];
-  const [listofResturants, setListOfResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const [searchText, setSearchTextText] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const listofResturants = useResturantList();
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5561306&lng=73.7769077&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setListOfResturants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredResturants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  useEffect(() => {
+    setFilteredResturants(listofResturants);
+  }, [listofResturants]);
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
@@ -81,10 +38,7 @@ const Body = () => {
           <button
             className="search-btn"
             onClick={() => {
-              //on Click filter and update UI
-              //search Text
               console.log(searchText);
-
               const filterRes = listofResturants.filter((res) => {
                 return res.info.name
                   .toLowerCase()
@@ -125,3 +79,21 @@ const Body = () => {
 };
 
 export default Body;
+
+// const [listofResturants, setListOfResturants] = useState([]);
+// useEffect(() => {
+//   fetchData();
+// }, []);
+// const fetchData = async () => {
+//   const data = await fetch({ Resturants_API });
+//   const json = await data.json();
+//   console.log(
+//     json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//   );
+//   setListOfResturants(
+//     json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//   );
+//   setFilteredResturants(
+//     json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//   );
+// };
