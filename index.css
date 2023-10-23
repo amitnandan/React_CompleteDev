@@ -1,4 +1,8 @@
-#heading {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #heading {
   color: brown;
 }
 .header {
@@ -43,7 +47,7 @@
 
 .res-card > * {
   margin: 5px; /* Add spacing between content elements */
-}
+/* }
 
 .search {
   padding: 10px;
@@ -148,4 +152,4 @@
   flex-direction: column;
   flex-wrap: wrap;
   overflow: hidden;
-}
+} */
