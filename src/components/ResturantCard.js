@@ -18,11 +18,27 @@ const ResturantCard = (props) => {
       />
       <h3 className="font-bold py-2 text-lg"> {name}</h3>
       <h4 className="py-2"> {cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
+      <h4 className="py-2">{avgRating}</h4>
       <h4>{sla.deliveryTime} minutes</h4>
       <h4>Rs.{costForTwo} for two</h4>
     </div>
   );
+};
+
+//Higher Order component
+//input ResturantCard => ResturantCardPromoted
+
+export const withPromotedLabel = (ResturantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Promoted
+        </label>
+        <ResturantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default ResturantCard;
