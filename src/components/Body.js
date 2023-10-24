@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { Resturants_API } from "../utils/constants";
-import ResturantList from "../utils/useResturantList";
 import useResturantList from "../utils/useResturantList";
 
 const Body = () => {
@@ -39,7 +37,6 @@ const Body = () => {
           <button
             className="search-btn px-4 py-2  bg-green-200 m-4 rounded-lg"
             onClick={() => {
-              console.log(searchText);
               const filterRes = listofResturants.filter((res) => {
                 return res.info.name
                   .toLowerCase()
@@ -58,7 +55,7 @@ const Body = () => {
               let filteredListResturants = listofResturants.filter(
                 (res) => res.info.avgRating > 4.0
               );
-              console.log(filteredListResturants);
+
               setFilteredResturants(filteredListResturants);
             }}
           >

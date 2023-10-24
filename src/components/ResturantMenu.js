@@ -1,4 +1,3 @@
-//import { Menu_API } from "../utils/constants";
 import React from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
@@ -8,9 +7,6 @@ import ResturantCategory from "./ResturantCategory";
 const ResturantMenu = () => {
   const { resId } = useParams();
   const resInfo = useResturantMenu(resId);
-
-  //console.log(resInfo);
-
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } =
@@ -36,8 +32,6 @@ const ResturantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  //console.log(categories);
-
   return (
     <div className=" text-center p-4">
       <h1 className="text-3xl font-bold mb-2">{name}</h1>
@@ -46,7 +40,10 @@ const ResturantMenu = () => {
       </p>
 
       {categories.map((category) => (
-        <ResturantCategory data={category?.card?.card} />
+        <ResturantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
       ))}
 
       <ul className="menu-ul ">
