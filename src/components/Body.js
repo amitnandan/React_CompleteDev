@@ -20,7 +20,7 @@ const Body = () => {
   if (onlineStatus === false)
     return <h1>Your are offline !! Please check your internet Connection</h1>;
 
-  return listofResturants.length === 0 ? (
+  return !listofResturants || listofResturants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">

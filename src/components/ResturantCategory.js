@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import ListItems from "./ListItems";
 
-const ResturantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const ResturantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowIndex(showItems);
   };
-
   return (
     <div>
       <div className="  w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4 ">
         <div
-          className="flex justify-between cursor-pointer"
+          className=" flex justify-between cursor-pointer"
           onClick={handleClick}
         >
           <span className="font-bold text-lg">
