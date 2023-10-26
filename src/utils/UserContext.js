@@ -1,3 +1,8 @@
 import { createContext } from "react";
 
-const UserContext = createContext;
+//kinda central global object
+const UserContext = createContext({
+  loggedInUser: "Default User",
+});
+
+export default UserContext;
