@@ -3,7 +3,7 @@ import ListItems from "./ListItems";
 
 const ResturantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
-    setShowIndex(showItems);
+    setShowIndex();
   };
   return (
     <div>

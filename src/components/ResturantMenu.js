@@ -8,7 +8,7 @@ const ResturantMenu = () => {
   const { resId } = useParams();
   const resInfo = useResturantMenu(resId);
 
-  const [showIndex, setShowIndex] = useState(0);
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -50,8 +50,14 @@ const ResturantMenu = () => {
           setShowIndex={() => setShowIndex(index)}
         />
       ))}
+    </div>
+  );
+};
 
-      <ul className="menu-ul ">
+export default ResturantMenu;
+
+{
+  /* <ul className="menu-ul ">
         {itemCards.map((item) => {
           return (
             <li
@@ -65,8 +71,5 @@ const ResturantMenu = () => {
           );
         })}
       </ul>
-    </div>
-  );
-};
-
-export default ResturantMenu;
+      */
+}
