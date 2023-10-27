@@ -1,0 +1,5 @@
+intalll reduxjs
+connect our store to app 
+slice ( store base)
+dispatch(action )
+Selector
