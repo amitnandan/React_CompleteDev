@@ -3,3 +3,23 @@ connect our store to app
 slice ( store base)
 dispatch(action )
 Selector
+
+
+
+
+
+
+
+install react testing library , 
+jest , 
+babel dependencies
+config babel 
+
+
+
+
+parcel by default has its own babel config , but if you want to use 
+custom config ,then disable bebel transpiler of babel.
+
+config jest ... npx jest --init 
+install jsdom library 
