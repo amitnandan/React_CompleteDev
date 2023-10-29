@@ -6,15 +6,10 @@ Selector
 
 
 
-
-
-
-
 install react testing library , 
 jest , 
 babel dependencies
 config babel 
-
 
 
 
@@ -23,3 +18,11 @@ custom config ,then disable bebel transpiler of babel.
 
 config jest ... npx jest --init 
 install jsdom library 
+
+
+**/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)
+
+
+create fileName that matches these pattern.
+
+__ = dunder ( two times underscore )  , so , dunder test" :) "
