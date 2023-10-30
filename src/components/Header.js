@@ -1,4 +1,4 @@
-import { useState, useContext, useState } from "react";
+import { useState, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
@@ -42,7 +42,7 @@ const Header = () => {
               btnName === "LOGIN" ? setbtnName("LOGOUT") : setbtnName("LOGIN");
             }}
           >
-            Logged IN : {loggedInUser}-{btnName}
+            Login : {loggedInUser}-{btnName}
           </button>
         </ul>
       </div>
